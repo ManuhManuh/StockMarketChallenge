@@ -42,3 +42,7 @@ ExportedObj/
 # Third-Party
 **/ARFoundationRemoteInstaller*
 **/AR\ Foundation\ Remote\ Loader*
+.vsconfig
+ProjectSettings
+Logs
+ProjectSettings
