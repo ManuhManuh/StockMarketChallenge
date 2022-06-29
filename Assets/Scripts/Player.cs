@@ -5,32 +5,31 @@ using StockMarket;
 using System;
 using TMPro;
 
-public class Player : IObserver
+public class Player : MonoBehaviour, IObserver
 {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private float automaticBuyPrice;
 
     [SerializeField] private TextMeshProUGUI totalStockText;
     [SerializeField] private TextMeshProUGUI totalCashText;
-    [SerializeField] private TextMeshProUGUI buyAmountText;
-    [SerializeField] private TextMeshProUGUI sellAmountText;
+
+    [SerializeField] private TextMeshProUGUI buyThresholdText;
 
     private bool automaticBuyEnabled = false;
     private int totalStock;
     private float totalCash;
 
-    public void Update(IObservable subject)
+    public void UpdatedInfo(IObservable subject)
     {
         float currentPrice = gameManager.CurrentPrice;
         int maxAfforded = CanAffordToBuy(currentPrice);
 
         if (currentPrice <= automaticBuyPrice && totalCash > 0 && automaticBuyEnabled)
         {
-            BuyStock(maxAfforded, currentPrice);
+            BuyStock();
             UpdateUI();
         }
     }
-
 
     public void StartAutomaticPurchase()
     {
@@ -49,15 +48,12 @@ public class Player : IObserver
         gameManager.Unsubscribe(this);
     }
 
-    private void UpdateUI()
+    private void BuyStock()
     {
-        // Change the total stock and total cash values
-    }
+        float currentPrice = gameManager.CurrentPrice;
 
-    private void BuyStock(int amount, float currentPrice)
-    {
-
-        if (CanAffordToBuy(currentPrice) >= amount)
+        int amount = CanAffordToBuy(currentPrice);
+        if (amount > 0)
         {
             totalCash -= amount * currentPrice;
             totalStock += amount;
@@ -66,12 +62,12 @@ public class Player : IObserver
 
     }
 
-    private void SellStock(int amount, float currentPrice)
+    private void SellStock()
     {
-        int sellAmount = amount > totalStock ? totalStock : amount;
-
-        totalStock -= sellAmount;
-        totalCash += sellAmount * currentPrice;
+        float currentPrice = gameManager.CurrentPrice;
+        
+        totalCash += totalStock * currentPrice;
+        totalStock = 0;
         UpdateUI();
     }
 
@@ -81,5 +77,13 @@ public class Player : IObserver
 
     }
 
+    private void UpdateUI()
+    {
+        // Change the total stock and total cash values
+        totalStockText.text = $"TOTAL STOCK: {totalStock}";
+        totalStockText.text = $"TOTAL CASH: {totalCash}";
+
+        // 
+    }
 
 }

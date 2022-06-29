@@ -5,6 +5,6 @@ using UnityEngine;
 public interface IObserver 
 {
 
-    public void Update(IObservable subject);
+    public void UpdatedInfo(IObservable subject);
 
 }

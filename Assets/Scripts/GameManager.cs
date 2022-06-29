@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using TMPro;
 
 namespace StockMarket
 {
     public class GameManager : MonoBehaviour, IObservable
     {
         [SerializeField] private GraphController graphController;
+        [SerializeField] private TextMeshProUGUI currentPriceText;
 
         [SerializeField] private float maxStockValue = 100;
         [SerializeField] private float stockUpdateTimeSeconds;
@@ -31,6 +33,7 @@ namespace StockMarket
 
                 // add notification to subscribers that stock value has changed
                 Notify();
+                UpdateUI();
             }
         }
 
@@ -62,8 +65,13 @@ namespace StockMarket
         {
             foreach (var subscriber in subscribers)
             {
-                subscriber.Update(this);
+                subscriber.UpdatedInfo(this);
             }
+        }
+
+        private void UpdateUI()
+        {
+            currentPriceText.text = $"CURRENT PRICE: {currentStock}";
         }
     }
 }
