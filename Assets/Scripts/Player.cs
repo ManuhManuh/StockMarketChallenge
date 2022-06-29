@@ -14,11 +14,17 @@ public class Player : MonoBehaviour, IObserver
     [SerializeField] private TextMeshProUGUI totalCashText;
 
     [SerializeField] private TextMeshProUGUI buyThresholdText;
+    [SerializeField] private TextMeshProUGUI autoButtonText;
 
     private bool automaticBuyEnabled = false;
-    private int totalStock;
-    private float totalCash;
+    [SerializeField] private int totalStock = 0;
+    [SerializeField] private float totalCash = 1000;
 
+    private void Start()
+    {
+        UpdateUI();
+
+    }
     public void UpdatedInfo(IObservable subject)
     {
         float currentPrice = gameManager.CurrentPrice;
@@ -31,24 +37,39 @@ public class Player : MonoBehaviour, IObserver
         }
     }
 
-    public void StartAutomaticPurchase()
+    public void ToggleAutoPurchase()
     {
+        if (automaticBuyEnabled)
+        {
+            StopAutomaticPurchase();
+        }
+        else
+        {
+            StartAutomaticPurchase();
+        }
+    }
+
+    private void StartAutomaticPurchase()
+    {
+        automaticBuyPrice = int.Parse(buyThresholdText.text);
         automaticBuyEnabled = true;
+        autoButtonText.text = "STOP";
 
         // subscribe to Game Manager notifications of stock changes
         gameManager.Subscribe(this);
 
     }
 
-    public void StopAutomaticPurchase()
+    private void StopAutomaticPurchase()
     {
         automaticBuyEnabled = false;
+        autoButtonText.text = "AUTO BUY";
 
         // unsubscribe from Game Manager notifications of stock changes (no longer need)
         gameManager.Unsubscribe(this);
     }
 
-    private void BuyStock()
+    public void BuyStock()
     {
         float currentPrice = gameManager.CurrentPrice;
 
@@ -62,7 +83,7 @@ public class Player : MonoBehaviour, IObserver
 
     }
 
-    private void SellStock()
+    public void SellStock()
     {
         float currentPrice = gameManager.CurrentPrice;
         
@@ -77,13 +98,23 @@ public class Player : MonoBehaviour, IObserver
 
     }
 
+    public void IncreaseBuyThreshold()
+    {
+        if(automaticBuyPrice < 100) automaticBuyPrice++;
+        buyThresholdText.text = automaticBuyPrice.ToString();
+    }
+
+    public void DecreaseBuyThreshold()
+    {
+        if(automaticBuyPrice > 0) automaticBuyPrice--;
+        buyThresholdText.text = automaticBuyPrice.ToString();
+    }
+
     private void UpdateUI()
     {
-        // Change the total stock and total cash values
         totalStockText.text = $"TOTAL STOCK: {totalStock}";
-        totalStockText.text = $"TOTAL CASH: {totalCash}";
+        totalCashText.text = $"TOTAL CASH: {totalCash}";
 
-        // 
     }
 
 }

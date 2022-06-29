@@ -218,12 +218,8 @@ RectTransform:
   - {fileID: 1637616703}
   - {fileID: 1392185496}
   - {fileID: 1528986473}
-  - {fileID: 501026711}
-  - {fileID: 430249132}
-  - {fileID: 1201484847}
-  - {fileID: 1087634182}
-  - {fileID: 238918906}
-  - {fileID: 452266444}
+  - {fileID: 1735857826}
+  - {fileID: 1813112269}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -250,7 +246,7 @@ MonoBehaviour:
     connectionPrefab: {fileID: 5029410058917721212, guid: e629b8e8b573c35408588a069b658e86, type: 3}
     xSpacing: 50
     maxDisplayedDots: 30
-  currentPriceText: {fileID: 0}
+  currentPriceText: {fileID: 501026712}
   maxStockValue: 100
   stockUpdateTimeSeconds: 0.25
   maxStockDelta: 15
@@ -415,17 +411,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238918905}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 196638805}
-  m_Father: {fileID: 6255904}
-  m_RootOrder: 7
+  m_Father: {fileID: 1813112269}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 351, y: -78}
+  m_AnchoredPosition: {x: 351, y: 412.00003}
   m_SizeDelta: {x: 160, y: 50.0049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &238918907
@@ -471,7 +467,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 238918908}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 551973097}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: SellStock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &238918908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,16 +543,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430249131}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6255904}
-  m_RootOrder: 4
+  m_Father: {fileID: 1735857826}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 287.56708, y: -59}
+  m_AnchoredPosition: {x: -622.4329, y: 431}
   m_SizeDelta: {x: 447.1342, y: 46.3657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &430249133
@@ -670,7 +678,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452266443}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -678,12 +686,12 @@ RectTransform:
   - {fileID: 2007450632}
   - {fileID: 1806592341}
   - {fileID: 1987934567}
-  m_Father: {fileID: 6255904}
-  m_RootOrder: 8
+  m_Father: {fileID: 1813112269}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -367, y: -78}
+  m_AnchoredPosition: {x: 543, y: 412.00003}
   m_SizeDelta: {x: 160, y: 50.0049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452266445
@@ -729,7 +737,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 452266446}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 551973097}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: ToggleAutoPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &452266446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,16 +813,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501026710}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6255904}
-  m_RootOrder: 3
+  m_Father: {fileID: 1735857826}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -193.28, y: -84}
+  m_AnchoredPosition: {x: -193.28, y: 406.00003}
   m_SizeDelta: {x: 386.57, y: 46.3657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501026712
@@ -1014,11 +1034,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f51b216f2e5b574aad7264028f4b105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 6255905}
   automaticBuyPrice: 0
-  totalStockText: {fileID: 0}
-  totalCashText: {fileID: 0}
-  buyThresholdText: {fileID: 0}
+  totalStockText: {fileID: 1201484848}
+  totalCashText: {fileID: 430249133}
+  buyThresholdText: {fileID: 2007450633}
+  autoButtonText: {fileID: 1571632445}
+  totalStock: 0
+  totalCash: 1000
 --- !u!4 &551973098
 Transform:
   m_ObjectHideFlags: 0
@@ -1527,17 +1550,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087634181}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1036977249}
-  m_Father: {fileID: 6255904}
-  m_RootOrder: 6
+  m_Father: {fileID: 1813112269}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 131.00005, y: -77.99991}
+  m_AnchoredPosition: {x: 131.00005, y: 412.00003}
   m_SizeDelta: {x: 160, y: 50.0049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1087634183
@@ -1583,7 +1606,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1087634184}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 551973097}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: BuyStock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1087634184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,16 +1682,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201484846}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6255904}
-  m_RootOrder: 5
+  m_Father: {fileID: 1735857826}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 287.56708, y: -108}
+  m_AnchoredPosition: {x: -622.4329, y: 382.00003}
   m_SizeDelta: {x: 447.1342, y: 46.3657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1201484848
@@ -2100,7 +2135,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AUTO
+  m_text: AUTO BUY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2252,6 +2287,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637616702}
   m_CullTransparentMesh: 1
+--- !u!1 &1735857825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1735857826}
+  m_Layer: 5
+  m_Name: Displays
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1735857826
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735857825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 501026711}
+  - {fileID: 430249132}
+  - {fileID: 1201484847}
+  m_Father: {fileID: 6255904}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1789559310
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,7 +2541,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1806592343}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 551973097}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: IncreaseBuyThreshold
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1806592343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2507,6 +2592,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806592340}
   m_CullTransparentMesh: 1
+--- !u!1 &1813112268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1813112269}
+  m_Layer: 5
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1813112269
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813112268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1087634182}
+  - {fileID: 238918906}
+  - {fileID: 452266444}
+  m_Father: {fileID: 6255904}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1941325874
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,7 +2747,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1987934569}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 551973097}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: DecreaseBuyThreshold
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1987934569
 MonoBehaviour:
   m_ObjectHideFlags: 0
